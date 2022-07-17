@@ -6,7 +6,7 @@ pipeline {
         stage('Hello') {
           steps {
             echo 'Hello World kaushik updated '
-            sh 'docker images'
+            sh 'docker images'v1.2 
           }
         }
 
