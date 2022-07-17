@@ -1,12 +1,31 @@
-pipeline {
+  pipeline {
     agent any
+
     stages {
-        stage('build') {
+        stage('Hello') {
             steps {
-                echo 'docker image list '
-                sh 'docker images '
-                
+                echo 'Hello World'
+            }
+        }
+        stage('Buid') {
+            steps {
+                echo 'Building'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
             }
         }
     }
-}
+}		
