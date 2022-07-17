@@ -1,32 +1,48 @@
-  pipeline {
-    agent any
-
-    stages {
+pipeline {
+  agent any
+  stages {
+    stage('Hello') {
+      parallel {
         stage('Hello') {
-            steps {
-                echo 'Hello World kaushik updated '
-                sh 'docker images'
-            }
+          steps {
+            echo 'Hello World kaushik updated '
+            sh 'docker images'
+          }
         }
-        stage('Buid') {
-            steps {
-                echo 'Building'
-            }
+
+        stage('Hello2') {
+          steps {
+            sh 'docker images'
+            sh 'echo \'Hello\''
+          }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing'
-            }
-        }
-        stage('Release') {
-            steps {
-                echo 'Releasing'
-            }
-        }
+
+      }
     }
-}		
+
+    stage('Buid') {
+      steps {
+        echo 'Building'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deploying'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        echo 'Testing'
+      }
+    }
+
+    stage('Release') {
+      steps {
+        echo 'Releasing'
+      }
+    }
+
+  }
+}
