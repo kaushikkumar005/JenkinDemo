@@ -4,7 +4,7 @@
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                echo 'Hello World kaushik updated '
             }
         }
         stage('Buid') {
